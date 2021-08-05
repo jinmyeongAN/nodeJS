@@ -7,6 +7,7 @@
 
 /users/edit -> Edit user
 /users/delete -> Delete user
+/users/:id -> See users
 
 /videos/watch -> Watch Video
 /videos/edit -> Edit Video

@@ -1,3 +1,4 @@
 export const handleEdit = (req, res) => {
-    res.send("Edit the user information")
+    const videos = ['a','b','c','d','e'];
+    res.render("home", {pageName:"home", videos}); 
 }

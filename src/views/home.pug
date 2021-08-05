@@ -1,0 +1,8 @@
+extends base.pug
+
+block content
+    h2 Welcome to the edit page
+    ul 
+        each video in videos
+            li=video 
+    input(placeholder="Show me what U got!")
