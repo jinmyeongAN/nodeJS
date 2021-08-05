@@ -1,6 +1,7 @@
 mixin show(info)
     div
-        h4=info.title
+        h4
+            a(href=`videos/${info.id}`)=info.title
         ul
             li #{info.views} views.
             li The rating is #{info.rating}.

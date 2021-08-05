@@ -1,10 +1,7 @@
 import express from "express";
+import { handleHome } from "../Controllers/videoController";
 
 const globalRouter = express.Router();
-
-const handleHome = (req,res) => {
-    res.send("Homepage");
-}
 
 globalRouter.get('/', handleHome);
 

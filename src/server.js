@@ -10,9 +10,10 @@ const app = express();
 
 app.set("view engine", "pug");
 app.set("views", process.cwd() + "/src/views");
+app.use(express.urlencoded({ extended: true}));
 app.use('/', globalRouter);
 app.use('/users', usersRouter);
-app.use('/video', videoRouter);
+app.use('/videos', videoRouter);
 
 const handleListening = () => {
     console.log("Your server is listening!")

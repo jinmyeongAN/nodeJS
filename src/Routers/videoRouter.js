@@ -1,9 +1,10 @@
 import express from "express";
-import { handleWatch, handleWatchId } from "../Controllers/videoController";
+import { getEdit, handleWatchId, postEdit } from "../Controllers/videoController";
 
 const videoRouter = express.Router();
 
-videoRouter.get('/watch', handleWatch);
-videoRouter.get('/watch/:id(\\d+)', handleWatchId);
+videoRouter.get('/:id(\\d+)/edit', getEdit);
+videoRouter.post('/:id(\\d+)/edit', postEdit)
+videoRouter.get('/:id(\\d+)', handleWatchId);
 
 export default videoRouter;
