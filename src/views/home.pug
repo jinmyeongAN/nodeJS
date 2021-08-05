@@ -1,8 +1,8 @@
 extends base.pug
+include mixins/video
 
 block content
     h2 Welcome to the edit page
-    ul 
-        each video in videos
-            li=video 
+    each video in videos
+        +show(video)
     input(placeholder="Show me what U got!")
