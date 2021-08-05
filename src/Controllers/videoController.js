@@ -39,3 +39,18 @@ export const handleWatchId = (req, res) => {
     const video = videos[id-1];
     res.render("watch",{pageName: `Watch video ${video.title}`, video});
 }
+export const getUpload = (req, res) => {
+    res.render("upload",{pageName: "Upload"})
+}
+export const postUpload = (req, res) => {
+    //add new video
+    const {title} = req.body;
+    const newVideo = {
+        title,
+        views: 1,
+        rating: 5,
+        id: 4,
+    }
+    videos.push(newVideo);
+    res.redirect('/');
+}
