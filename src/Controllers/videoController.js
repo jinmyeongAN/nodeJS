@@ -1,3 +1,5 @@
+import Video from "../models/Video"
+
 let videos = [
     {
         title: "movie_1",
@@ -19,8 +21,15 @@ let videos = [
     }
 ]
 
-export const handleHome = (req, res) => {
-    res.render("home", {pageName:"Home", videos});
+export const handleHome = async(req, res) => {
+    
+    try {
+        const list = await Video.find({});
+        console.log("movies", list);
+        res.render("home", {pageName:"Home", videos});
+    }catch(error){
+        console.log("error", error)
+    }
 }
 export const getEdit = (req, res) => {
     const id = req.params.id;
